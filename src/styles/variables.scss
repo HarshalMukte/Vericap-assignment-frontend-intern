@@ -1,0 +1,15 @@
+// SCSS variables referencing CSS variables for consistency
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$text-color: var(--text-color);
+$light-gray: var(--light-gray);
+$dark-gray: var(--dark-gray);
+$highlight-color: var(--highlight-color);
+
+// Typography
+$font-family: 'Roboto', sans-serif;
+
+// Spacing
+$spacing-small: 8px;
+$spacing-medium: 16px;
+$spacing-large: 24px;

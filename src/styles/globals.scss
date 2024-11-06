@@ -1,0 +1,54 @@
+@use "variables" as *;
+@use  "variables" as *;
+
+// CSS Variables for Theme Colors
+:root {
+  --primary-color: #7a5dff;
+  --secondary-color: #f2f4f7;
+  --text-color: #1f1f1f;
+  --light-gray: #e1e4e8;
+  --dark-gray: #6c757d;
+  --highlight-color: #ff6347;
+  --skeleton-bg-color: #e0e0e0;
+  --skeleton-shine-color: #f0f0f0;
+}
+
+.dark-mode {
+  --primary-color: #4444dd;
+  --secondary-color: #1c1c1c;
+  --text-color: #f0f0f0;
+  --light-gray: #333;
+  --dark-gray: #bbb;
+  --highlight-color: #ff6347;
+  --skeleton-bg-color: #4a4a4a;
+  --skeleton-shine-color: #6b6b6b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $secondary-color;
+  color: $text-color;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: $font-family;
+  cursor: pointer;
+}
+  
+// Dark mode styles
+.dark-mode {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}

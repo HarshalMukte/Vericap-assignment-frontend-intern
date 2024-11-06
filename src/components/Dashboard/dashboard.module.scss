@@ -1,0 +1,208 @@
+@use  "../../styles/variables" as *;
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-large;
+
+  .header {
+    text-align: center;
+    margin-bottom: $spacing-large;
+
+    h1 {
+      font-size: 2rem;
+      color: var(--primary-color);
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--dark-gray);
+    }
+  }
+
+  .summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: $spacing-large;
+    padding: $spacing-large;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: $spacing-large;
+
+    .chartContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h3 {
+        font-size: 1.25rem;
+        margin-bottom: $spacing-medium;
+        color: var(--text-color);
+      }
+    }
+
+    .metrics {
+      max-width: 200px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h3 {
+        font-size: 1.25rem;
+        margin-bottom: $spacing-medium;
+        color: var(--text-color);
+      }
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        padding: $spacing-small 0;
+        font-size: 1rem;
+        color: var(--text-color);
+
+        p {
+          margin: 0;
+        }
+
+        span {
+          font-weight: bold;
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .users {
+    background-color: $secondary-color;
+    padding: $spacing-large;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .skeletonContainer {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-small;
+      padding: $spacing-small 0;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: $spacing-medium;
+      color: $primary-color;
+    }
+
+    .searchInput {
+      width: 100%;
+      padding: $spacing-medium;
+      margin-bottom: $spacing-medium;
+      border: 1px solid $light-gray;
+      border-radius: 6px;
+      font-size: 1rem;
+      color: $text-color;
+      transition: border-color 0.3s;
+      background-color: $secondary-color;
+      box-shadow: 2px 2px 4px 1px rgba(123, 93, 255, 0.089);
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 2px 2px 4px 1px rgba(123, 93, 255, 0.215);
+      }
+      &:disabled {
+        background-color: $light-gray;
+        cursor: not-allowed;
+      }
+    }
+
+    .message {
+      color: var(--highlight-color); // Set this to a color that stands out
+      background-color: rgba(
+        255,
+        0,
+        0,
+        0.1
+      ); // Slight background to make it noticeable
+      padding: $spacing-small;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 500;
+      margin-top: $spacing-medium;
+    }
+
+    .tableContainer {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; 
+      max-width: 100%;
+      padding-bottom: $spacing-small;
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1rem;
+        color: $text-color;
+
+        th,
+        td {
+          padding: 12px;
+          border-bottom: 1px solid var(--light-gray);
+          text-align: left;
+          font-size: 1rem;
+          color: var(--text-color);
+        }
+        th {
+          color: var(--dark-gray);
+          font-weight: 500;
+        }
+
+        .profileImage {
+          width: 50px;
+          height: 50px;
+          border-radius: 12px;
+          object-fit: cover;
+        }
+
+        .tag {
+          display: inline-block;
+          background-color: var(--secondary-color);
+          color: #fff;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 5px 10px;
+          border-radius: 15px;
+          margin-right: 5px;
+          transition: background-color 0.3s ease;
+        }
+
+        .activeTag {
+          display: inline-block;
+          background-color: $primary-color;
+          color: $secondary-color;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 5px 10px;
+          border-radius: 15px;
+          margin-right: 5px;
+        }
+
+        .inactiveTag {
+          display: inline-block;
+          background-color: $highlight-color;
+          color: $secondary-color;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 5px 10px;
+          border-radius: 15px;
+          margin-right: 5px;
+        }
+
+        tr:hover {
+          background-color: var(--light-gray);
+        }
+      }
+    }
+  }
+}

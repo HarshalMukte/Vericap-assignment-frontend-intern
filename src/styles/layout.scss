@@ -1,0 +1,20 @@
+@use "variables" as *;
+
+.layout {
+  display: flex;
+  position: relative;
+  
+  .mainContent {
+    max-width: 100%;
+    flex: 1;
+    padding: $spacing-large;
+    background-color: $secondary-color;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+  }
+
+}

@@ -1,0 +1,146 @@
+@use  "../../styles/variables" as *;
+
+.profileWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-large;
+  text-align: center;
+
+  .header {
+    text-align: center;
+    margin-bottom: $spacing-large;
+
+    h1 {
+      font-size: 2rem;
+      color: $primary-color;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--dark-gray);
+    }
+  }
+
+  .profilePage {
+    background-color: $secondary-color;
+    padding: $spacing-large;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+
+    .profileHeader {
+      margin-bottom: $spacing-large;
+
+      .imageWrapper {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        .profileImage {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .editImageLabel {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          text-align: center;
+          font-size: 0.8rem;
+          padding: $spacing-small;
+          cursor: pointer;
+
+          input {
+            display: none;
+          }
+        }
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: $spacing-medium;
+        color: var(--primary-color);
+      }
+    }
+
+    .profileContent {
+      .infoSection {
+        font-size: 1rem;
+        color: var(--text-color);
+        padding: $spacing-medium;
+        margin-bottom: $spacing-medium;
+        p {
+          margin: $spacing-small 0;
+        }
+      }
+
+      .profileForm {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: $spacing-medium;
+        padding: $spacing-medium;
+        margin-bottom: $spacing-medium;
+
+        label {
+          font-weight: 500;
+          color: var(--dark-gray);
+        }
+
+        input {
+          width: 100%;
+          padding: $spacing-small;
+          border: 1px solid $light-gray;
+          border-radius: 4px;
+          font-size: 1rem;
+          color: var(--text-color);
+          transition: border-color 0.3s;
+
+          &.editable {
+            border-color: $primary-color;
+            box-shadow: 0 0 4px rgba(122, 93, 255, 0.5);
+          }
+        }
+      }
+
+      .buttonContainer {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-small;
+
+        .editButton, .saveButton {
+          padding: $spacing-small $spacing-medium;
+          font-size: 1rem;
+          color: #fff;
+          background-color: $primary-color;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: $primary-color
+          }
+        }
+      }
+
+      .message {
+        color: rgb(23, 184, 5);
+        font-size: 0.9rem;
+        margin-top: $spacing-small;
+      }
+    }
+  }
+}
