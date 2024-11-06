@@ -92,14 +92,14 @@
 
   // Media Query for Smaller Screens
   @media (max-width: 768px) {
-    width: 80px; // Collapse sidebar width
+    width: 80px; 
 
     .logo {
       display: none; // Hide logo in mobile view
     }
 
     .nav ul li a {
-      justify-content: center; // Center icons in mobile view
+      justify-content: center; 
       padding: $spacing-small;
       font-size: 0.9rem;
     }

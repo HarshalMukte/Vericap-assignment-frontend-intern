@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './settings.module.scss';
 
 const SettingsPage = () => {
-  const [darkMode, setDarkMode] = useState(false); // Initialize as false
+  const [darkMode, setDarkMode] = useState(false); 
 
   // Load dark mode preference from localStorage after component mounts
   useEffect(() => {

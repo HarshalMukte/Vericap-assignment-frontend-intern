@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./profile.module.scss";
 
 const ProfilePage = () => {
-  // Load data from localStorage or use default values
   const defaultProfileData = {
     name: "Harshal Mukte",
     email: "harshalmukte@gmail.com",

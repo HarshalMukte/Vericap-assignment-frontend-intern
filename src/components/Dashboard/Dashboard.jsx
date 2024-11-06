@@ -21,7 +21,7 @@ const Dashboard = () => {
   ];
   const COLORS = ["#7a5dff", "#e0e0e0"];
 
-  // Fetch data from API
+  // Fetch data from API using axios
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -143,7 +143,7 @@ const Dashboard = () => {
                             src={`https://picsum.photos/seed/${user.id}/100/100`}
                             alt="User profile"
                             onError={(e) =>
-                              (e.target.src = "/images/fallback-profile.png")
+                              (e.target.src = "/images/fallback-profile.jpg")
                             } // Fallback image
                             className={styles.profileImage}
                           />
@@ -152,7 +152,6 @@ const Dashboard = () => {
                         <td>{user.email}</td>
                         <td>{user.company.name}</td>
 
-                        {/* Random Pills/Tags */}
                         <td>
                           <span
                             className={

@@ -119,13 +119,13 @@
     }
 
     .message {
-      color: var(--highlight-color); // Set this to a color that stands out
+      color: var(--highlight-color); 
       background-color: rgba(
         255,
         0,
         0,
         0.1
-      ); // Slight background to make it noticeable
+      ); 
       padding: $spacing-small;
       border-radius: 6px;
       text-align: center;
