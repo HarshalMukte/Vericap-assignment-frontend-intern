@@ -3,9 +3,13 @@ import React, { useState, useEffect } from 'react';
 import styles from './settings.module.scss';
 
 const SettingsPage = () => {
-  // Load dark mode preference from local storage or set to light mode by default
-  const storedTheme = JSON.parse(localStorage.getItem('darkMode')) || false;
-  const [darkMode, setDarkMode] = useState(storedTheme);
+  const [darkMode, setDarkMode] = useState(false); // Initialize as false
+
+  // Load dark mode preference from localStorage after component mounts
+  useEffect(() => {
+    const storedTheme = JSON.parse(localStorage.getItem('darkMode')) || false;
+    setDarkMode(storedTheme);
+  }, []);
 
   // Toggle dark mode
   const toggleDarkMode = () => {
@@ -26,7 +30,7 @@ const SettingsPage = () => {
 
   return (
     <div className={styles.settingsPage}>
-       <div className={styles.header}>
+      <div className={styles.header}>
         <h1>Settings</h1>
         <p>Adjust your display preferences</p>
       </div>

@@ -4,16 +4,21 @@ import styles from "./profile.module.scss";
 
 const ProfilePage = () => {
   // Load data from localStorage or use default values
-  const storedProfileData = JSON.parse(localStorage.getItem("profileData")) || {
+  const defaultProfileData = {
     name: "Harshal Mukte",
     email: "harshalmukte@gmail.com",
     profileImage:
-      "https://media.licdn.com/dms/image/v2/D4D03AQGHiGgsiiAqNg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718681868771?e=2147483647&v=beta&t=lOX83lVdr_-sZiGiunkRILrmMpghiDaArI6p1Oy_AOg", // Default image path
+      "https://media.licdn.com/dms/image/v2/D4D03AQGHiGgsiiAqNg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718681868771?e=2147483647&v=beta&t=lOX83lVdr_-sZiGiunkRILrmMpghiDaArI6p1Oy_AOg",
   };
-
-  const [profileData, setProfileData] = useState(storedProfileData);
+  const [profileData, setProfileData] = useState(defaultProfileData);
   const [isEditing, setIsEditing] = useState(false);
   const [message, setMessage] = useState("");
+
+  // Load data from localStorage after the component mounts
+  useEffect(() => {
+    const storedProfileData = JSON.parse(localStorage.getItem("profileData")) || defaultProfileData;
+    setProfileData(storedProfileData);
+  }, []);
 
   // Save updated profile data
   const handleSave = () => {
