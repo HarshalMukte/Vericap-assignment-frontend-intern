@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Here’s a comprehensive README file for your project:
+
+---
+
+# Vericap Assignment - Frontend Intern
+
+**Live Demo:** [https://harshal-vericap.vercel.app](https://harshal-vericap.vercel.app)  
+**GitHub Repository:** [https://github.com/HarshalMukte/Vericap-assignment-frontend-intern](https://github.com/HarshalMukte/Vericap-assignment-frontend-intern)
+
+## Project Overview
+
+This project is a responsive user dashboard built with Next.js and SCSS modules. The application fetches user data from a mock API, displays user metrics, and provides a user profile page with editable information. The dashboard is optimized for performance, accessibility, and usability, following best practices in component design and state management.
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Design Choices](#design-choices)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Testing Instructions](#testing-instructions)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Error Handling](#error-handling)
+- [Contributing](#contributing)
+
+## Design Choices
+
+1. **Component Structure**:
+   - Components are modularized to ensure reusability and maintainability. For example, the `Sidebar`, `ProfilePage`, and `SettingsPage` components are isolated, with individual SCSS modules for styling.
+   - The component structure follows a folder hierarchy, allowing easy scalability if new components are added.
+
+2. **SCSS Modules**:
+   - The project uses SCSS modules for scoped styling, preventing style leakage and promoting modularity.
+   - Variables and mixins are utilized for theme management, including a dark mode toggle in the settings page.
+
+3. **Responsiveness**:
+   - The layout and tables are fully responsive, adapting to different screen sizes, including mobile views, with the sidebar and table scrolling only when needed.
+
+4. **State Management**:
+   - State is managed within each component using `useState` and `useEffect`, with `localStorage` used to persist user preferences, such as dark mode and profile details.
+
+## Technologies Used
+
+- **Next.js**: Framework for building the application with server-side rendering and static site generation.
+- **React**: JavaScript library for building the UI components.
+- **SCSS Modules**: CSS preprocessor for styling with support for variables, nesting, and modules.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/HarshalMukte/Vericap-assignment-frontend-intern.git
+   cd Vericap-assignment-frontend-intern
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Visit the application**:
+   Open your browser and go to [http://localhost:3000](http://localhost:3000) to view the app.
+
+### Building for Production
+
+To create an optimized build for production, run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Testing Instructions
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Responsive Testing**:
+   - Test the responsiveness by resizing the browser window or using developer tools to simulate mobile and tablet views.
+   
+2. **Search Functionality**:
+   - In the Users section, use the search bar to filter users by name or email. Ensure the filtered data updates accurately.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Form Validation**:
+   - In the Profile page, click the "Edit Profile" button to enable the form. Modify the user’s name or email, and verify that the updates persist.
+   - Confirm that the "Save" button stores the data in `localStorage`.
 
-## Learn More
+4. **Error Handling**:
+   - Disconnect from the internet or simulate an error to test the error handling for API requests. Ensure that error messages display as expected.
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── components/
+│   ├── Dashboard/
+│   ├── Layout/
+│   ├── Profile/
+│   ├── Settings/
+├── styles/
+│   ├── globals.scss
+│   ├── layout.scss
+├── pages/
+│   ├── index.jsx
+│   ├── profile.jsx
+│   ├── settings.jsx
+└── public/
+    └── images/ (fallback image, logo, etc.)
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+1. **Dashboard**:
+   - Displays user metrics, including total, active, and inactive users.
+   - Includes a donut chart showing user activity.
+   - Responsive search functionality for filtering user data.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Profile Page**:
+   - Displays user information with editable fields for name and email.
+   - Changes persist in `localStorage` and are loaded on refresh.
+   - Users can upload a new profile image or reset to a fallback image.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Settings Page**:
+   - Dark mode toggle with preference saved in `localStorage`.
+   - Toggles the theme across all pages.
+
+## Error Handling
+
+- **API Errors**: Displays error messages if the API request fails. The search input is disabled if an error occurs.
+- **Form Validation**: Input fields validate for empty or invalid values, preventing saving without valid data.
+
+## Contributing
+
+We welcome contributions! Feel free to fork the repository and submit pull requests.
+
+---
